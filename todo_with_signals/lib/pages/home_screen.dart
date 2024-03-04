@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'counter_screen.dart';
+import 'todo_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -9,7 +10,8 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(title: Text("home")),
         body: ListView(children: [
-          _NavItem(label: "Counter", screen: CounterPage(title: "counter"))
+          _NavItem(label: "Counter", screen: CounterPage()),
+          _NavItem(label: "To Do", screen: todo_screen())
         ]));
   }
 }
