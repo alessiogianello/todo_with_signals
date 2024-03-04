@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'counter_screen.dart';
 import 'todo_screen.dart';
+import 'http.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -11,7 +12,8 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(title: Text("home")),
         body: ListView(children: [
           _NavItem(label: "Counter", screen: CounterPage()),
-          _NavItem(label: "To Do", screen: todo_screen())
+          _NavItem(label: "To Do", screen: todo_screen()),
+          _NavItem(label: "Http", screen: HttpScreen())
         ]));
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'pages/counter_screen.dart';
 import 'pages/home_screen.dart';
 
 void main() {
