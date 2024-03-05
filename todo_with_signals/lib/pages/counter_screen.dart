@@ -10,24 +10,23 @@ class CounterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Counter"),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          counter.value++;
-        },
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("You have pushed the button this many times:"),
-            Text("${counter.watch(context)}")
-          ],
+        appBar: AppBar(
+          title: Text("Counter"),
         ),
-      ),
-    );
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            counter.value++;
+          },
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                  "You have pushed the button ${counter.watch(context)} times:")
+            ],
+          ),
+        ));
   }
 }

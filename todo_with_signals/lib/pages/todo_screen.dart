@@ -4,6 +4,8 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:signals/signals_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_with_signals/main.dart';
 
 typedef Todo = ({int id, String label, bool completed});
 
@@ -59,6 +61,11 @@ class todo_screen extends StatelessWidget {
     final textEditingController = TextEditingController();
     return Scaffold(
         appBar: AppBar(title: Text("To Do"), actions: [
+          IconButton(
+              onPressed: () {
+                context.read<CartProvider>().changeCartCount(newCartCount: 100);
+              },
+              icon: Icon(Icons.add)),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: PopupMenuButton(
@@ -119,7 +126,7 @@ class todo_screen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  "Total: ${todoCount.value}\n Active: ${activeTodoCount.value}\n Completed: ${completedTodoCount.value}",
+                  "Total: ${todoCount.value}\n Active: ${activeTodoCount.value}\n Completed: ${completedTodoCount.value}\n Elementi nel carrello:${context.watch<CartProvider>().cartCount}",
                   textAlign: TextAlign.center,
                 ),
               ),
